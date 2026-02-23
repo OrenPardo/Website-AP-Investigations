@@ -1,0 +1,25 @@
+{
+  "name": "ap-investigations",
+  "version": "1.0.0",
+  "description": "Alon Pardo — Professional Private Investigation Services",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/tailwind.css --minify",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./public/tailwind.css",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./public/tailwind.css --watch"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
