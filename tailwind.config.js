@@ -4,15 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1a2e44',
-        'primary-dark': '#0f1d2e',
-        'primary-light': '#2a4a6b',
-        accent: '#b8960c',
-        'accent-hover': '#a07e08',
-        'section-gray': '#f5f6f8',
-        'text-main': '#1a2e44',
-        'text-muted': '#5a6a7a',
-        'border-light': '#e2e6ea',
+        surface: '#d5d9e2',
+        'surface-light': '#e4e7ed',
+        'surface-dark': '#c0c5d0',
+        card: '#ffffff',
+        ink: '#1a1a1a',
+        'ink-muted': '#6b7080',
+        'ink-light': '#9499a8',
+        'border-subtle': '#c0c5d0',
       },
       fontFamily: {
         sans: ['"Heebo"', 'sans-serif'],

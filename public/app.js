@@ -1,29 +1,37 @@
-// ── Mobile menu toggle ───────────────────────────────────────────
+// ── Mobile menu (full-screen overlay) ────────────────────────────
 (function () {
     const toggle = document.getElementById('menu-toggle');
+    const close = document.getElementById('menu-close');
     const menu = document.getElementById('mobile-menu');
     if (!toggle || !menu) return;
 
+    function openMenu() {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
     toggle.addEventListener('click', () => {
-        const open = !menu.classList.contains('hidden');
-        menu.classList.toggle('hidden');
-        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
     });
 
-    // Close on link click
+    if (close) close.addEventListener('click', closeMenu);
+
     menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            toggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeMenu);
     });
 })();
 
-// ── Scroll-triggered fade-in animations ──────────────────────────
+// ── Reveal on scroll ─────────────────────────────────────────────
 (function () {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
-        document.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('visible'));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
         return;
     }
 
@@ -34,12 +42,12 @@
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 
-    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 
-// ── Contact form submission ──────────────────────────────────────
+// ── Contact form ─────────────────────────────────────────────────
 (function () {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -47,19 +55,13 @@
     const btn = document.getElementById('submit-btn');
     const status = document.getElementById('form-status');
 
-    function showError(fieldId, msg) {
-        const el = document.getElementById(fieldId + '-error');
-        if (el) {
-            el.textContent = msg;
-            el.classList.remove('hidden');
-        }
+    function showError(id, msg) {
+        const el = document.getElementById(id + '-error');
+        if (el) { el.textContent = msg; el.classList.remove('hidden'); }
     }
 
     function clearErrors() {
-        form.querySelectorAll('[id$="-error"]').forEach(el => {
-            el.textContent = '';
-            el.classList.add('hidden');
-        });
+        form.querySelectorAll('[id$="-error"]').forEach(el => { el.textContent = ''; el.classList.add('hidden'); });
         status.classList.add('hidden');
     }
 
@@ -72,15 +74,13 @@
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Client-side validation
-        let hasError = false;
-        if (!name) { showError('name', 'נא למלא שם'); hasError = true; }
-        if (!phone) { showError('phone', 'נא למלא טלפון'); hasError = true; }
-        else if (!/^[\d\s\-+().]+$/.test(phone)) { showError('phone', 'מספר טלפון לא תקין'); hasError = true; }
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email', 'כתובת אימייל לא תקינה'); hasError = true; }
-        if (hasError) return;
+        let err = false;
+        if (!name) { showError('name', 'נא למלא שם'); err = true; }
+        if (!phone) { showError('phone', 'נא למלא טלפון'); err = true; }
+        else if (!/^[\d\s\-+().]+$/.test(phone)) { showError('phone', 'מספר טלפון לא תקין'); err = true; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email', 'כתובת אימייל לא תקינה'); err = true; }
+        if (err) return;
 
-        // Submit
         btn.disabled = true;
         btn.textContent = 'שולח...';
 
@@ -92,19 +92,18 @@
             });
             const json = await res.json();
             status.classList.remove('hidden');
-
             if (json.ok) {
                 status.textContent = 'הפנייה נשלחה בהצלחה. נחזור אליכם בהקדם.';
-                status.className = 'text-center text-sm text-green-600';
+                status.className = 'text-sm text-green-700';
                 form.reset();
             } else {
                 status.textContent = json.error || 'שגיאה בשליחה. נסו שוב.';
-                status.className = 'text-center text-sm text-red-600';
+                status.className = 'text-sm text-red-600';
             }
         } catch {
             status.classList.remove('hidden');
             status.textContent = 'שגיאת רשת. נסו שוב.';
-            status.className = 'text-center text-sm text-red-600';
+            status.className = 'text-sm text-red-600';
         } finally {
             btn.disabled = false;
             btn.textContent = 'שליחת פנייה';

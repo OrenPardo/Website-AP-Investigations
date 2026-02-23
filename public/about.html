@@ -5,183 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>אודות | אלון פרדו — חקירות פרטיות</title>
     <meta name="description" content="אלון פרדו — ניסיון רב שנים בתחום החקירות הפרטיות. מקצועיות, דיסקרטיות ותוצאות.">
-
     <meta property="og:type" content="website">
     <meta property="og:title" content="אודות | אלון פרדו — חקירות פרטיות">
-    <meta property="og:description" content="אלון פרדו — ניסיון רב שנים בתחום החקירות הפרטיות. מקצועיות, דיסקרטיות ותוצאות.">
+    <meta property="og:description" content="אלון פרדו — ניסיון רב שנים בתחום החקירות הפרטיות.">
     <meta property="og:locale" content="he_IL">
-    <meta name="theme-color" content="#1a2e44">
+    <meta name="theme-color" content="#d5d9e2">
     <link rel="canonical" href="/about">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/tailwind.css">
 </head>
-<body class="bg-white text-text-main">
-
+<body class="bg-surface text-ink">
     <a href="#main" class="skip-link">דלג לתוכן הראשי</a>
 
-    <!-- ══ Header ══════════════════════════════════════════════ -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border-light">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold text-primary tracking-tight">אלון פרדו</a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-text-muted" aria-label="ניווט ראשי">
-                <a href="/" class="hover:text-primary transition-colors">ראשי</a>
-                <a href="/services" class="hover:text-primary transition-colors">שירותים</a>
-                <a href="/about" class="text-primary border-b-2 border-accent pb-0.5">אודות</a>
-                <a href="/contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-primary-dark transition-colors">צור קשר</a>
-            </nav>
-            <button id="menu-toggle" class="md:hidden p-2 text-primary" aria-label="תפריט" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
+    <!-- ── Nav ─────────────────────────────────────────────────── -->
+    <nav class="fixed top-0 inset-x-0 z-50 mix-blend-difference" aria-label="ניווט ראשי">
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12 py-8 flex items-center justify-between">
+            <a href="/" class="text-white text-lg tracking-tight">
+                <span class="font-700">אלון פרדו</span> <span class="font-200">חקירות</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-[13px] font-300 text-white/70">
+                <a href="/services" class="hover:text-white transition-colors">שירותים</a>
+                <a href="/about" class="text-white">אודות</a>
+                <a href="/contact" class="hover:text-white transition-colors">צור קשר</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white" aria-label="תפריט" aria-expanded="false">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 18h16"/></svg>
             </button>
         </div>
-        <nav id="mobile-menu" class="md:hidden hidden bg-white border-t border-border-light" aria-label="ניווט נייד">
-            <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
-                <a href="/" class="text-text-muted hover:text-primary py-2 transition-colors">ראשי</a>
-                <a href="/services" class="text-text-muted hover:text-primary py-2 transition-colors">שירותים</a>
-                <a href="/about" class="text-primary py-2">אודות</a>
-                <a href="/contact" class="bg-primary text-white text-center py-2.5 rounded hover:bg-primary-dark transition-colors">צור קשר</a>
-            </div>
-        </nav>
-    </header>
+    </nav>
+
+    <!-- ── Mobile menu overlay ────────────────────────────────── -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-ink hidden flex-col items-center justify-center gap-8 text-xl font-300 text-surface">
+        <button id="menu-close" class="absolute top-8 left-8 text-surface" aria-label="סגור תפריט">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="/" class="hover:opacity-60 transition-opacity">ראשי</a>
+        <a href="/services" class="hover:opacity-60 transition-opacity">שירותים</a>
+        <a href="/about" class="hover:opacity-60 transition-opacity">אודות</a>
+        <a href="/contact" class="hover:opacity-60 transition-opacity">צור קשר</a>
+    </div>
 
     <main id="main">
 
-        <!-- ══ Page hero ═══════════════════════════════════════ -->
-        <section class="pt-32 pb-16 md:pt-36 md:pb-20 bg-section-gray">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in-up">אודות המשרד</h1>
-                <p class="text-text-muted text-lg max-w-2xl mx-auto fade-in-up">מקצועיות ללא פשרות, דיסקרטיות מוחלטת, תוצאות</p>
+        <!-- ═══════════════════════════════════════════════════
+             Opening statement — large, takes space
+             ═══════════════════════════════════════════════════ -->
+        <section class="min-h-[80vh] flex items-end px-8 md:px-12 pb-20 md:pb-28">
+            <div class="max-w-[1400px] mx-auto w-full reveal">
+                <p class="text-2xl md:text-4xl lg:text-5xl font-200 leading-snug max-w-4xl">
+                    חוקר פרטי מורשה עם ניסיון של למעלה מ־<span class="font-600">15 שנה</span>. מוניטין של מקצועיות, אמינות ודיסקרטיות <span class="font-600">בלתי מתפשרת</span>.
+                </p>
             </div>
         </section>
 
-        <!-- ══ About content ═══════════════════════════════════ -->
-        <section class="py-20 md:py-28">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="md:flex gap-16 items-start">
-
-                    <!-- Text content -->
-                    <div class="flex-1 fade-in-up">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-6">אלון פרדו — חקירות פרטיות</h2>
-                        <div class="space-y-4 text-text-muted text-lg leading-relaxed">
-                            <p>
-                                אלון פרדו הוא חוקר פרטי מורשה עם ניסיון של למעלה מ-15 שנה בתחום החקירות הפרטיות. לאורך השנים, המשרד צבר מוניטין של מקצועיות, אמינות ודיסקרטיות בלתי מתפשרת.
-                            </p>
-                            <p>
-                                המשרד מתמחה בחקירות עבור חברות ביטוח מובילות, רשויות מקומיות, משרדי עורכי דין וגופים עסקיים. כל תיק מקבל יחס אישי ומטופל בגישה מקצועית המשלבת ניסיון שטח עשיר עם כלים וטכנולוגיות מתקדמות.
-                            </p>
-                            <p>
-                                הגישה שלנו פשוטה: להגיע לתוצאות מדויקות, במהירות המרבית, תוך שמירה על דיסקרטיות מוחלטת. אנו מאמינים שכל לקוח זכאי לשירות ברמה הגבוהה ביותר — ללא קיצורי דרך.
-                            </p>
+        <!-- ═══════════════════════════════════════════════════
+             Narrative — asymmetric 12-col
+             ═══════════════════════════════════════════════════ -->
+        <section class="py-24 md:py-32 px-8 md:px-12 bg-card">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="md:grid md:grid-cols-12 gap-8">
+                    <div class="md:col-span-3 mb-10 md:mb-0 reveal">
+                        <span class="text-[11px] font-500 tracking-[0.3em] text-ink-light uppercase">אודות</span>
+                    </div>
+                    <div class="md:col-span-8 reveal">
+                        <div class="space-y-6 text-ink-muted font-300 leading-relaxed text-lg">
+                            <p>המשרד מתמחה בחקירות עבור חברות ביטוח מובילות, רשויות מקומיות, משרדי עורכי דין וגופים עסקיים. כל תיק מקבל יחס אישי ומטופל בגישה מקצועית המשלבת ניסיון שטח עשיר עם כלים וטכנולוגיות מתקדמות.</p>
+                            <p>הגישה שלנו פשוטה: להגיע לתוצאות מדויקות, במהירות המרבית, תוך שמירה על דיסקרטיות מוחלטת. אנו מאמינים שכל לקוח זכאי לשירות ברמה הגבוהה ביותר — ללא קיצורי דרך.</p>
                         </div>
-                    </div>
-
-                    <!-- Values sidebar -->
-                    <div class="flex-shrink-0 md:w-80 mt-12 md:mt-0 fade-in-up">
-                        <div class="bg-section-gray rounded-lg p-8 space-y-8">
-                            <div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                    </div>
-                                    <h3 class="font-semibold text-lg">מהירות</h3>
-                                </div>
-                                <p class="text-text-muted text-sm leading-relaxed">תוצאות בזמן אמת. עמידה בלוחות זמנים מחייבים ומענה מהיר לכל דרישה.</p>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                    </div>
-                                    <h3 class="font-semibold text-lg">דיוק</h3>
-                                </div>
-                                <p class="text-text-muted text-sm leading-relaxed">מידע מאומת ומדויק. דוחות מקצועיים שעומדים בסטנדרטים המחמירים ביותר.</p>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                                    </div>
-                                    <h3 class="font-semibold text-lg">דיסקרטיות</h3>
-                                </div>
-                                <p class="text-text-muted text-sm leading-relaxed">חיסיון מוחלט בכל שלב. שמירה קפדנית על פרטיות הלקוחות והמידע.</p>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-                                    </div>
-                                    <h3 class="font-semibold text-lg">מקצועיות</h3>
-                                </div>
-                                <p class="text-text-muted text-sm leading-relaxed">רישיון חוקר פרטי. ניסיון מוכח מול הגופים הגדולים במשק.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ══ How we work ═════════════════════════════════════ -->
-        <section class="py-20 md:py-24 bg-section-gray">
-            <div class="max-w-5xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 fade-in-up">איך אנחנו עובדים</h2>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger">
-                    <div class="fade-in-up text-center">
-                        <div class="w-14 h-14 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
-                        <h3 class="font-semibold mb-2">פנייה ראשונית</h3>
-                        <p class="text-text-muted text-sm">שיחה חסויה להבנת הצרכים והגדרת מטרות החקירה</p>
-                    </div>
-                    <div class="fade-in-up text-center">
-                        <div class="w-14 h-14 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
-                        <h3 class="font-semibold mb-2">תכנון</h3>
-                        <p class="text-text-muted text-sm">בניית תכנית עבודה מותאמת עם לוח זמנים ברור</p>
-                    </div>
-                    <div class="fade-in-up text-center">
-                        <div class="w-14 h-14 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">3</div>
-                        <h3 class="font-semibold mb-2">ביצוע</h3>
-                        <p class="text-text-muted text-sm">חקירה מקצועית עם עדכונים שוטפים לאורך התהליך</p>
-                    </div>
-                    <div class="fade-in-up text-center">
-                        <div class="w-14 h-14 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">4</div>
-                        <h3 class="font-semibold mb-2">דיווח</h3>
-                        <p class="text-text-muted text-sm">דוח מפורט עם כל הממצאים, הראיות והמסקנות</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ══ CTA ═════════════════════════════════════════════ -->
-        <section class="py-16 md:py-20 bg-primary text-white">
-            <div class="max-w-3xl mx-auto px-6 text-center fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">מוכנים להתחיל?</h2>
-                <p class="text-blue-100 text-lg mb-8">צרו קשר לשיחה ראשונית חסויה וללא התחייבות.</p>
-                <a href="/contact" class="inline-block bg-accent text-white font-semibold px-10 py-4 rounded hover:bg-accent-hover transition-colors text-lg">לפנייה חסויה</a>
+        <!-- ═══════════════════════════════════════════════════
+             Values — large text rows, NOT numbered cards
+             ═══════════════════════════════════════════════════ -->
+        <section class="py-24 md:py-32 px-8 md:px-12">
+            <div class="max-w-[1400px] mx-auto">
+                <div class="md:grid md:grid-cols-12 gap-8">
+                    <div class="md:col-span-3 mb-10 md:mb-0 reveal">
+                        <span class="text-[11px] font-500 tracking-[0.3em] text-ink-light uppercase">הגישה</span>
+                    </div>
+                    <div class="md:col-span-9 reveal">
+                        <div class="border-b border-border-subtle py-8 md:py-10">
+                            <div class="md:flex items-baseline gap-12">
+                                <h3 class="text-2xl md:text-3xl font-200 md:w-48 shrink-0 mb-3 md:mb-0">מהירות</h3>
+                                <p class="text-ink-muted font-300 leading-relaxed">תוצאות בזמן אמת. עמידה בלוחות זמנים מחייבים ומענה מהיר לכל דרישה.</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-border-subtle py-8 md:py-10">
+                            <div class="md:flex items-baseline gap-12">
+                                <h3 class="text-2xl md:text-3xl font-200 md:w-48 shrink-0 mb-3 md:mb-0">דיוק</h3>
+                                <p class="text-ink-muted font-300 leading-relaxed">מידע מאומת ומדויק. דוחות מקצועיים שעומדים בסטנדרטים המחמירים ביותר.</p>
+                            </div>
+                        </div>
+                        <div class="border-b border-border-subtle py-8 md:py-10">
+                            <div class="md:flex items-baseline gap-12">
+                                <h3 class="text-2xl md:text-3xl font-200 md:w-48 shrink-0 mb-3 md:mb-0">דיסקרטיות</h3>
+                                <p class="text-ink-muted font-300 leading-relaxed">חיסיון מוחלט בכל שלב. שמירה קפדנית על פרטיות הלקוחות והמידע.</p>
+                            </div>
+                        </div>
+                        <div class="py-8 md:py-10">
+                            <div class="md:flex items-baseline gap-12">
+                                <h3 class="text-2xl md:text-3xl font-200 md:w-48 shrink-0 mb-3 md:mb-0">מקצועיות</h3>
+                                <p class="text-ink-muted font-300 leading-relaxed">רישיון חוקר פרטי. ניסיון מוכח מול הגופים הגדולים במשק.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════
+             CTA
+             ═══════════════════════════════════════════════════ -->
+        <section class="py-32 md:py-48 px-8 md:px-12 bg-card">
+            <div class="max-w-[1400px] mx-auto reveal">
+                <div class="md:grid md:grid-cols-12 gap-8 items-end">
+                    <div class="md:col-span-7">
+                        <h2 class="text-3xl md:text-5xl font-200 leading-tight">
+                            מוכנים<br><span class="font-600">להתחיל?</span>
+                        </h2>
+                    </div>
+                    <div class="md:col-span-5 mt-10 md:mt-0 md:text-left">
+                        <a href="/contact" class="inline-block bg-ink text-surface text-sm font-500 px-10 py-4 hover:opacity-80 transition-opacity">
+                            צרו קשר
+                        </a>
+                        <p class="text-ink-muted text-sm font-300 mt-4">שיחה ראשונית חסויה וללא התחייבות.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ══ Footer ══════════════════════════════════════════════ -->
-    <footer class="bg-primary-dark text-blue-100 py-12">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="md:flex justify-between items-start gap-8">
-                <div class="mb-8 md:mb-0">
-                    <div class="text-xl font-bold text-white mb-2">אלון פרדו</div>
-                    <div class="text-sm text-blue-200">חקירות פרטיות מקצועיות</div>
-                </div>
-                <nav class="flex gap-8 text-sm mb-8 md:mb-0" aria-label="ניווט תחתון">
-                    <a href="/" class="hover:text-white transition-colors">ראשי</a>
-                    <a href="/services" class="hover:text-white transition-colors">שירותים</a>
-                    <a href="/about" class="hover:text-white transition-colors">אודות</a>
-                    <a href="/contact" class="hover:text-white transition-colors">צור קשר</a>
-                </nav>
-            </div>
-            <div class="border-t border-white/10 mt-8 pt-8 text-center text-xs text-blue-300">
-                &copy; 2026 אלון פרדו — חקירות פרטיות. כל הזכויות שמורות.
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="px-8 md:px-12 py-10 border-t border-border-subtle">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-sm font-300 text-ink-muted">
+            <span>&copy; 2026 אלון פרדו</span>
+            <div class="flex gap-6">
+                <a href="tel:+972524203401" dir="ltr" class="hover:text-ink transition-colors">052-420-3401</a>
+                <a href="mailto:info@alonpardo.co.il" class="hover:text-ink transition-colors">info@alonpardo.co.il</a>
             </div>
         </div>
     </footer>
