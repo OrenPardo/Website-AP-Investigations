@@ -73,7 +73,7 @@ export default function Navbar({ locale, dict }) {
 
   return (
     <>
-      <nav className="fixed top-0 inset-x-0 z-50 mix-blend-difference" aria-label={dict.ariaNav}>
+      <nav className="fixed top-0 inset-x-0 z-50 bg-ink/80 backdrop-blur-sm" aria-label={dict.ariaNav}>
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-8 flex items-center justify-between">
           <Link href={`/${locale}`} className="text-white text-lg tracking-tight">
             <span className="font-700">{dict.logoBold}</span>{' '}
