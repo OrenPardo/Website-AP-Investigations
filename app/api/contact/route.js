@@ -147,7 +147,7 @@ export async function POST(request) {
 
   const html = `
     <div dir="rtl" style="font-family:sans-serif;max-width:600px;margin:0 auto">
-      <h2 style="color:#1a2e44">פנייה חדשה — אלון פרדו חקירות</h2>
+      <h2 style="color:#1a2e44">פנייה חדשה — וריטס חקירות</h2>
       <table style="width:100%;border-collapse:collapse">
         <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;width:30%">שם</td><td style="padding:8px;border-bottom:1px solid #eee">${safeName}</td></tr>
         <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">טלפון</td><td style="padding:8px;border-bottom:1px solid #eee">${safePhone}</td></tr>
@@ -158,7 +158,7 @@ export async function POST(request) {
 
   try {
     await mailer.sendMail({
-      from: `"אלון פרדו — אתר" <${process.env.SMTP_USER}>`,
+      from: `"וריטס חקירות — אתר" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
       subject,
       html,

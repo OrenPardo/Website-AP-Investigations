@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
       locale: locale === 'he' ? 'he_IL' : 'en_US',
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
     },
     icons: {
       icon: '/favicon.svg',

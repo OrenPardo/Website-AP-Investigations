@@ -8,11 +8,11 @@ export default function ContactInfo({ dict }) {
         <div className="space-y-6">
           <div>
             <span className="text-xs text-ink-light font-300 block mb-1">{dict.phoneLabel}</span>
-            <a href="tel:+972524203401" dir="ltr" className="text-lg font-300 hover:opacity-70 transition-opacity">052-420-3401</a>
+            <a href="tel:+972524203401" dir="ltr" className="text-lg font-300 hover:opacity-70 transition-opacity">{dict.phone}</a>
           </div>
           <div>
             <span className="text-xs text-ink-light font-300 block mb-1">{dict.emailLabel}</span>
-            <a href="mailto:pardoal003@gmail.com" className="text-lg font-300 hover:opacity-70 transition-opacity">pardoal003@gmail.com</a>
+            <a href="mailto:pardoal003@gmail.com" className="text-lg font-300 hover:opacity-70 transition-opacity">{dict.email}</a>
           </div>
         </div>
       </div>

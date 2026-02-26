@@ -1,7 +1,7 @@
 {
   "name": "ap-investigations",
-  "version": "1.0.3",
-  "description": "Alon Pardo — Professional Private Investigation Services",
+  "version": "1.0.0",
+  "description": "Veritas Investigations — Professional Private Investigation Services",
   "private": true,
   "scripts": {
     "dev": "next dev",

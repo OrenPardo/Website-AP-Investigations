@@ -1,28 +1,28 @@
 {
   "skipLink": "Skip to main content",
   "meta": {
-    "siteTitle": "Alon Pardo — Professional Private Investigations",
-    "siteTitleTemplate": "%s | Alon Pardo — Private Investigations",
-    "siteDescription": "Alon Pardo — Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks for insurance companies, municipalities and businesses.",
-    "homeTitle": "Alon Pardo — Professional Private Investigations",
-    "homeDescription": "Alon Pardo — Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks for insurance companies, municipalities and businesses.",
-    "homeOgTitle": "Alon Pardo — Professional Private Investigations",
-    "homeOgDescription": "Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks.",
+    "siteTitle": "Veritas Investigations — Managed by Attorney Alon Pardo",
+    "siteTitleTemplate": "%s | Veritas Investigations",
+    "siteDescription": "Veritas Investigations, managed by Attorney Alon Pardo — Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks for insurance companies, municipalities and businesses.",
+    "homeTitle": "Veritas Investigations — Managed by Attorney Alon Pardo",
+    "homeDescription": "Veritas Investigations, managed by Attorney Alon Pardo — Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks for insurance companies, municipalities and businesses.",
+    "homeOgTitle": "Veritas Investigations — Managed by Attorney Alon Pardo",
+    "homeOgDescription": "Professional private investigation firm managed by Attorney Alon Pardo. Insurance investigations, surveillance, asset tracing and background checks.",
     "servicesTitle": "Services",
     "servicesDescription": "Professional investigation services: insurance investigations, surveillance, background checks, asset tracing, corporate investigations and more.",
-    "servicesOgTitle": "Services | Alon Pardo — Private Investigations",
+    "servicesOgTitle": "Services | Veritas Investigations",
     "servicesOgDescription": "Professional investigation services: insurance investigations, surveillance, background checks, asset tracing and more.",
     "aboutTitle": "About",
-    "aboutDescription": "Alon Pardo — Years of experience in private investigations. Professionalism, discretion and results.",
-    "aboutOgTitle": "About | Alon Pardo — Private Investigations",
-    "aboutOgDescription": "Alon Pardo — Years of experience in private investigations.",
+    "aboutDescription": "Veritas Investigations, managed by Attorney Alon Pardo — Years of experience in private investigations. Professionalism, discretion and results.",
+    "aboutOgTitle": "About | Veritas Investigations",
+    "aboutOgDescription": "Veritas Investigations, managed by Attorney Alon Pardo — Years of experience in private investigations.",
     "contactTitle": "Contact",
-    "contactDescription": "Contact us for a confidential inquiry. Alon Pardo — Professional private investigations.",
-    "contactOgTitle": "Contact | Alon Pardo — Private Investigations",
-    "contactOgDescription": "Contact us for a confidential inquiry. Alon Pardo — Professional private investigations."
+    "contactDescription": "Contact us for a confidential inquiry. Veritas Investigations, managed by Attorney Alon Pardo.",
+    "contactOgTitle": "Contact | Veritas Investigations",
+    "contactOgDescription": "Contact us for a confidential inquiry. Veritas Investigations, managed by Attorney Alon Pardo."
   },
   "nav": {
-    "logoBold": "Alon Pardo",
+    "logoBold": "Veritas",
     "logoLight": "Investigations",
     "services": "Services",
     "about": "About",
@@ -30,10 +30,14 @@
     "home": "Home",
     "ariaNav": "Main navigation",
     "ariaMenu": "Menu",
-    "ariaClose": "Close menu"
+    "ariaClose": "Close menu",
+    "ariaLang": "Switch to Hebrew"
   },
   "footer": {
-    "copyright": "2026 Alon Pardo"
+    "copyright": "2026 Veritas Investigations",
+    "phone": "052-420-3401",
+    "email": "pardoal003@gmail.com",
+    "lawyerSite": "Attorney Alon Pardo"
   },
   "home": {
     "heroLine1": "Private",
@@ -49,7 +53,7 @@
       "Asset & Info Tracing",
       "Corporate Investigations"
     ],
-    "statement": "Over **15 years** of work with leading organizations. **Thousands of cases**. Absolute discretion. **Results**.",
+    "statement": "Over **20 years** of work with leading organizations. **Thousands of cases**. Absolute discretion. **Results**.",
     "workingWith": "Working with",
     "marqueeAriaLabel": "Organizations we work with",
     "marqueeItems": [
@@ -145,7 +149,7 @@
     ]
   },
   "about": {
-    "opening": "Licensed private investigator with over **15 years** of experience. A reputation for professionalism, reliability and **uncompromising** discretion.",
+    "opening": "Licensed private investigator with over **20 years** of experience. A reputation for professionalism, reliability and **uncompromising** discretion.",
     "sectionLabel": "About",
     "narrative1": "The firm specializes in investigations for leading insurance companies, municipalities, law firms and businesses. Every case receives personal attention and is handled with a professional approach that combines extensive field experience with advanced tools and technologies.",
     "narrative2": "Our approach is simple: achieve accurate results, with maximum speed, while maintaining absolute discretion. We believe every client deserves the highest level of service — with no shortcuts.",
@@ -171,7 +175,9 @@
     "hoursLabel": "Business hours",
     "hoursWeekday": "Sunday — Thursday: 08:00–19:00",
     "hoursFriday": "Friday: 08:00–13:00",
-    "hoursUrgent": "For urgent cases — available 24/7"
+    "hoursUrgent": "For urgent cases — available 24/7",
+    "phone": "052-420-3401",
+    "email": "pardoal003@gmail.com"
   },
   "form": {
     "nameLabel": "Full name",
@@ -204,9 +210,9 @@
     "sendFailed": "Failed to send message"
   },
   "jsonLd": {
-    "name": "Alon Pardo — Private Investigations",
-    "description": "Professional private investigation firm. Insurance investigations, surveillance, asset tracing and background checks.",
+    "name": "Veritas Investigations — Managed by Attorney Alon Pardo",
+    "description": "Professional private investigation firm managed by Attorney Alon Pardo. Insurance investigations, surveillance, asset tracing and background checks.",
     "personName": "Alon Pardo",
-    "jobTitle": "Private Investigator"
+    "jobTitle": "Attorney and Private Investigator"
   }
 }

@@ -90,7 +90,7 @@ export default function Navbar({ locale, dict }) {
                 {link.label}
               </Link>
             ))}
-            <LanguageSwitcher locale={locale} />
+            <LanguageSwitcher locale={locale} dict={dict} />
           </div>
           <button
             ref={hamburgerRef}
@@ -134,7 +134,7 @@ export default function Navbar({ locale, dict }) {
             {link.label}
           </Link>
         ))}
-        <LanguageSwitcher locale={locale} />
+        <LanguageSwitcher locale={locale} dict={dict} />
       </div>
     </>
   );
