@@ -66,7 +66,7 @@ html {
 .marquee-item {
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 200;
-  color: #6b7080;
+  color: #4a4f5e;
   white-space: nowrap;
   transition: color 0.3s;
 }
@@ -92,6 +92,18 @@ html {
 
 /* ── Selection ───────────────────────────────────────────────── */
 ::selection { background: #1a1a1a; color: #e4e7ed; }
+
+/* ── Success animation ──────────────────────────────────────── */
+@keyframes circleIn {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes checkIn {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
 
 /* ── Reduced motion ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

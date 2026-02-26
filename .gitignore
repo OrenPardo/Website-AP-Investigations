@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# Next.js
+.next/
+out/
+
 # Environment variables
 .env
 .env.*
@@ -22,3 +26,6 @@ replit.nix
 
 # Claude Code
 .claude/
+
+# Design reference
+design-ref.jpg
