@@ -6,8 +6,8 @@ export default function Footer({ dict }) {
         <div className="flex items-center gap-6">
           <a href="tel:+972524203401" dir="ltr" className="hover:text-ink transition-colors">{dict.phone}</a>
           <a href="mailto:pardoal003@gmail.com" className="hover:text-ink transition-colors">{dict.email}</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-ink transition-colors">{dict.lawyerSite}</a>
         </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-ink transition-colors">{dict.lawyerSite}</a>
       </div>
     </footer>
   );
