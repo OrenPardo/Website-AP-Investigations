@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   async headers() {
+    const scriptSrc = isProd
+      ? "script-src 'self' 'unsafe-inline'"
+      : "script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+
     return [
       {
         source: '/(.*)',
@@ -11,11 +17,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              scriptSrc,
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self'",
               "img-src 'self' data:",
-              "connect-src 'self'",
+              isProd ? "connect-src 'self'" : "connect-src 'self' ws://localhost:*",
               "frame-ancestors 'none'",
             ].join('; '),
           },

@@ -6,7 +6,15 @@ import { usePathname } from 'next/navigation';
 export default function LanguageSwitcher({ locale }) {
   const pathname = usePathname();
   const otherLocale = locale === 'he' ? 'en' : 'he';
-  const otherPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
+
+  let otherPath;
+  if (locale === 'he') {
+    // Hebrew uses bare paths — prepend /en
+    otherPath = `/en${pathname === '/' ? '' : pathname}`;
+  } else {
+    // English uses /en/... — strip prefix for Hebrew bare path
+    otherPath = pathname.replace(/^\/en/, '') || '/';
+  }
 
   return (
     <Link

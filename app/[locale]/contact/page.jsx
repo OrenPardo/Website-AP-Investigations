@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
       description: m.contactOgDescription,
     },
     alternates: {
-      canonical: `/${locale}/contact`,
-      languages: { he: '/he/contact', en: '/en/contact' },
+      canonical: locale === 'he' ? '/contact' : '/en/contact',
+      languages: { he: '/contact', en: '/en/contact' },
     },
   };
 }

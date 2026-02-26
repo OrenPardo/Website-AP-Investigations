@@ -18,8 +18,8 @@ export async function generateMetadata({ params }) {
       description: m.servicesOgDescription,
     },
     alternates: {
-      canonical: `/${locale}/services`,
-      languages: { he: '/he/services', en: '/en/services' },
+      canonical: locale === 'he' ? '/services' : '/en/services',
+      languages: { he: '/services', en: '/en/services' },
     },
   };
 }

@@ -4,7 +4,7 @@ export default function getJsonLd(dict, locale) {
     '@type': 'ProfessionalService',
     name: dict.name,
     description: dict.description,
-    url: `https://alonpardo.co.il/${locale}`,
+    url: locale === 'he' ? 'https://alonpardo.co.il' : `https://alonpardo.co.il/${locale}`,
     telephone: '+972-52-420-3401',
     email: 'pardoal003@gmail.com',
     address: {

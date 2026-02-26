@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
       description: m.aboutOgDescription,
     },
     alternates: {
-      canonical: `/${locale}/about`,
-      languages: { he: '/he/about', en: '/en/about' },
+      canonical: locale === 'he' ? '/about' : '/en/about',
+      languages: { he: '/about', en: '/en/about' },
     },
   };
 }

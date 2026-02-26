@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
     },
     alternates: {
       languages: {
-        he: '/he',
+        he: '/',
         en: '/en',
       },
     },

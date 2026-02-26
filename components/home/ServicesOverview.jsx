@@ -2,6 +2,7 @@ import Link from 'next/link';
 import RevealOnScroll from '@/components/shared/RevealOnScroll';
 import SectionLabel from '@/components/shared/SectionLabel';
 import ArrowIcon from '@/components/shared/ArrowIcon';
+import localePath from '@/lib/localePath';
 
 export default function ServicesOverview({ locale, dict }) {
   const serviceNames = dict.serviceNames;
@@ -17,7 +18,7 @@ export default function ServicesOverview({ locale, dict }) {
             {serviceNames.map((name, i) => (
               <Link
                 key={name}
-                href={`/${locale}/services`}
+                href={localePath(locale, '/services')}
                 className={`group block ${i < serviceNames.length - 1 ? 'border-b border-border-subtle' : ''} py-8 md:py-10`}
               >
                 <div className="flex items-baseline justify-between">

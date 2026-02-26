@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
+import localePath from '@/lib/localePath';
 
 export default function Navbar({ locale, dict }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,9 +13,9 @@ export default function Navbar({ locale, dict }) {
   const hamburgerRef = useRef(null);
 
   const navLinks = [
-    { href: `/${locale}/services`, label: dict.services },
-    { href: `/${locale}/about`, label: dict.about },
-    { href: `/${locale}/contact`, label: dict.contact },
+    { href: localePath(locale, '/services'), label: dict.services },
+    { href: localePath(locale, '/about'), label: dict.about },
+    { href: localePath(locale, '/contact'), label: dict.contact },
   ];
 
   const closeMenu = useCallback(() => {
@@ -73,9 +74,9 @@ export default function Navbar({ locale, dict }) {
 
   return (
     <>
-      <nav className="fixed top-0 inset-x-0 z-50 bg-ink/80 backdrop-blur-sm" aria-label={dict.ariaNav}>
+      <nav className="fixed top-0 inset-x-0 z-50 nav-fade" aria-label={dict.ariaNav}>
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-8 flex items-center justify-between">
-          <Link href={`/${locale}`} className="text-white text-lg tracking-tight">
+          <Link href={localePath(locale, '')} className="text-white text-lg tracking-tight">
             <span className="font-700">{dict.logoBold}</span>{' '}
             <span className="font-200">{dict.logoLight}</span>
           </Link>
@@ -122,7 +123,7 @@ export default function Navbar({ locale, dict }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <Link href={`/${locale}`} onClick={closeMenu} className="hover:opacity-60 transition-opacity">{dict.home}</Link>
+        <Link href={localePath(locale, '')} onClick={closeMenu} className="hover:opacity-60 transition-opacity">{dict.home}</Link>
         {navLinks.map((link) => (
           <Link
             key={link.href}
